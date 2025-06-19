@@ -1,11 +1,10 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, Shield, Cloud, Network } from "lucide-react";
 
 const services = [
   {
     icon: Monitor,
-    title: "VOIP Implementation",
+    title: "Managed IT Support",
     description: "Complete IT management and support for your entire technology infrastructure."
   },
   {
