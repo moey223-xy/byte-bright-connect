@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Calendar } from "lucide-react";
 import { useState } from "react";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,22 +12,18 @@ const Contact = () => {
     business: '',
     message: ''
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission here
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <section id="contact" className="py-20 bg-gray-50">
+  return <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">
@@ -50,58 +44,25 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name" className="text-[#1F1F1F] font-semibold">Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                      required
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]" required />
                   </div>
                   <div>
                     <Label htmlFor="email" className="text-[#1F1F1F] font-semibold">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                      required
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]" required />
                   </div>
                 </div>
                 
                 <div>
                   <Label htmlFor="business" className="text-[#1F1F1F] font-semibold">Business Name</Label>
-                  <Input
-                    id="business"
-                    name="business"
-                    value={formData.business}
-                    onChange={handleChange}
-                    className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                  />
+                  <Input id="business" name="business" value={formData.business} onChange={handleChange} className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]" />
                 </div>
                 
                 <div>
                   <Label htmlFor="message" className="text-[#1F1F1F] font-semibold">Brief IT Need *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                    placeholder="Tell us about your IT challenges or goals..."
-                    required
-                  />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]" placeholder="Tell us about your IT challenges or goals..." required />
                 </div>
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-[#2978F2] hover:bg-[#1F5FD4] text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                >
+                <Button type="submit" className="w-full bg-[#2978F2] hover:bg-[#1F5FD4] text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   Send Message
                 </Button>
               </form>
@@ -141,7 +102,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#1F1F1F]">Service Area</h4>
-                  <p className="text-gray-600">Servicing Brisbane and Gold Coast</p>
+                  <p className="text-gray-600">Brisbane and Gold Coast</p>
                 </div>
               </CardContent>
             </Card>
@@ -159,8 +120,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

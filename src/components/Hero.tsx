@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-[#2978F2] rounded-full blur-3xl animate-pulse"></div>
@@ -39,23 +36,27 @@ const Hero = () => {
 
           {/* Trust Indicators */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto text-center">
-            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="text-3xl font-bold text-[#2978F2]">24/7</div>
               <div className="text-gray-600">Support</div>
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-fade-in" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="text-3xl font-bold text-[#2978F2]">99.9%</div>
               <div className="text-gray-600">Uptime</div>
             </div>
-            <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="text-3xl font-bold text-[#2978F2]">500+</div>
+            <div className="animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
+              <div className="text-3xl font-bold text-[#2978F2]">100+</div>
               <div className="text-gray-600">Happy Clients</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
