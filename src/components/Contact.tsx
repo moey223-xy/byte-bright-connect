@@ -140,8 +140,8 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#1F1F1F]">Address</h4>
-                  <p className="text-gray-600">123 Business Center Dr.<br />Suite 100, City, ST 12345</p>
+                  <h4 className="font-semibold text-[#1F1F1F]">Service Area</h4>
+                  <p className="text-gray-600">Servicing Brisbane and Gold Coast</p>
                 </div>
               </CardContent>
             </Card>
