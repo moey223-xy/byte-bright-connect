@@ -5,7 +5,7 @@ import { Monitor, Shield, Cloud, Network } from "lucide-react";
 const services = [
   {
     icon: Monitor,
-    title: "Managed IT Support",
+    title: "VOIP Implementation",
     description: "Complete IT management and support for your entire technology infrastructure."
   },
   {
