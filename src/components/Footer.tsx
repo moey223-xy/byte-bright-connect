@@ -19,9 +19,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 bg-[#2978F2] rounded-full flex items-center justify-center hover:bg-[#1F5FD4] transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#2978F2] rounded-full flex items-center justify-center hover:bg-[#1F5FD4] transition-colors duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
+              
             </div>
           </div>
 
@@ -33,8 +31,7 @@ const Footer = () => {
               <li><a href="#about" className="text-gray-300 hover:text-[#2978F2] transition-colors">About Us</a></li>
               <li><a href="#process" className="text-gray-300 hover:text-[#2978F2] transition-colors">Our Process</a></li>
               <li><a href="#contact" className="text-gray-300 hover:text-[#2978F2] transition-colors">Contact</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-[#2978F2] transition-colors">Blog</a></li>
-            </ul>
+              </ul>
           </div>
 
           {/* Contact Info */}
@@ -43,11 +40,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#2978F2]" />
-                <span className="text-gray-300">+61 478 831 924</span>
+                <a href="tel:+61478831924" className="text-gray-300 hover:underline">
+                +61 478 831 924
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#2978F2]" />
-                <span className="text-gray-300">info@bigbytetech.com</span>
+                <a href="mailto:info@bigbytetech.com.au" className="text-gray-300 hover:underline">
+                info@bigbytetech.com.au
+                </a>
               </div>
               
             </div>
@@ -57,7 +58,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 BigByte Tech. All rights reserved.
+            © 2025 BigByte Tech. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-[#2978F2] text-sm transition-colors">Privacy Policy</a>

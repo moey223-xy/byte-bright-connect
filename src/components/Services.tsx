@@ -1,16 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Monitor, Shield, Cloud, Network } from "lucide-react";
+import { Monitor, PhoneCall, Cloud, Settings2 } from "lucide-react";
 
 const services = [
   {
     icon: Monitor,
-    title: "Managed IT Support",
+    title: "Managed IT Support Services",
     description: "Complete IT management and support for your entire technology infrastructure."
   },
   {
-    icon: Shield,
-    title: "Network & Cybersecurity",
-    description: "Advanced security solutions to protect your business from cyber threats."
+    icon: PhoneCall,
+    title: "Business Phone & VoIP Solutions",
+    description: "Setup and management of Internet based phone systems for seamless communication."
   },
   {
     icon: Cloud,
@@ -18,9 +18,9 @@ const services = [
     description: "Seamless cloud transitions with reliable backup and disaster recovery."
   },
   {
-    icon: Network,
-    title: "Proactive Monitoring",
-    description: "24/7 system monitoring to prevent issues before they impact your business."
+    icon: Settings2,
+    title: "Business Efficiency & Automation",
+    description: "Implement smart business automations that save time and boost productivity."
   }
 ];
 

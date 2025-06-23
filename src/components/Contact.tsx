@@ -5,25 +5,41 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Calendar } from "lucide-react";
 import { useState } from "react";
+
+interface FormData {
+  name: string;
+  email: string;
+  business: string;
+  message: string;
+}
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     business: '',
     message: ''
   });
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-  return <section id="contact" className="py-20 bg-gray-50">
+
+  const handleSubmit = () => {
+
+    const subject = encodeURIComponent(`IT Enquiry from ${formData.business || 'No Business Name'}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name || 'N/A'}\nEmail: ${formData.email || 'N/A'}\nBusiness Name: ${formData.business || 'N/A'}\n\nBrief IT Need:\n${formData.message || 'N/A'}`
+    );
+
+    window.location.href = `mailto:info@bigbytetech.com.au?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">
@@ -40,7 +56,7 @@ const Contact = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-[#1F1F1F] mb-6">Send us a message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name" className="text-[#1F1F1F] font-semibold">Name *</Label>
@@ -62,10 +78,13 @@ const Contact = () => {
                   <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]" placeholder="Tell us about your IT challenges or goals..." required />
                 </div>
                 
-                <Button type="submit" className="w-full bg-[#2978F2] hover:bg-[#1F5FD4] text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <Button
+                  onClick={handleSubmit}
+                  className="w-full bg-[#2978F2] hover:bg-[#1F5FD4] text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
                   Send Message
                 </Button>
-              </form>
+              </div>
             </CardContent>
           </Card>
 
@@ -78,7 +97,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#1F1F1F]">Phone</h4>
-                  <p className="text-gray-600">(555) 123-4567</p>
+                  <p className="text-gray-600">
+                    <a href="tel:+61478831924" className="hover:underline">
+                      0478 831 924
+                    </a>
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -90,7 +113,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#1F1F1F]">Email</h4>
-                  <p className="text-gray-600">hello@bigbytetech.com</p>
+                  <p className="text-gray-600">
+                    <a href="mailto:info@bigbytetech.com.au" className="hover:underline">
+                      info@bigbytetech.com.au
+                    </a>
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -107,19 +134,24 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg rounded-2xl border-none bg-[#2978F2] text-white hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8 text-center">
-                <Calendar className="h-12 w-12 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold mb-2">Book a Call</h4>
-                <p className="mb-4">Schedule a free consultation with our IT experts</p>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#2978F2] rounded-xl">
-                  Schedule Now
+           <Card className="shadow-lg rounded-2xl border-none bg-[#2978F2] text-white hover:shadow-xl transition-shadow duration-300">
+            <CardContent className="p-8 text-center">
+              <Calendar className="h-12 w-12 mx-auto mb-4" />
+              <h4 className="text-xl font-semibold mb-2">Give us a Call</h4>
+              <p className="mb-4">Speak with one of our IT experts now</p>
+              <a href="tel:+61478831924">
+                <Button variant="outline" className="border-white text-black hover:bg-white hover:text-[#2978F2] rounded-xl">
+                  Call Now
                 </Button>
-              </CardContent>
-            </Card>
+              </a>
+            </CardContent>
+          </Card>
+
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;

@@ -32,9 +32,11 @@ const Navigation = () => {
           <a href="#contact" className="text-[#1F1F1F] hover:text-[#2978F2] transition-colors">Contact</a>
         </div>
 
-        <Button className="bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
-          Get Started
-        </Button>
+        <a href="#contact">
+          <Button className="bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-6 py-2 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            Get Started
+          </Button>
+        </a>
       </div>
     </nav>
   );

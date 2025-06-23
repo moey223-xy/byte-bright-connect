@@ -23,15 +23,19 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button className="bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-              Get Your Free Consultation
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
             
-            <Button variant="outline" className="border-2 border-[#2978F2] text-[#2978F2] hover:bg-[#2978F2] hover:text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 group">
-              <Play className="mr-2 h-5 w-5" />
-              See Our Services
-            </Button>
+            <a href="#contact">
+              <Button className="bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+                Get Your Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a href="#services">
+              <Button variant="outline" className="border-2 border-[#2978F2] text-[#2978F2] hover:bg-[#2978F2] hover:text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 group">
+                <Play className="mr-2 h-5 w-5" />
+                See Our Services
+              </Button>
+            </a>
           </div>
 
           {/* Trust Indicators */}
