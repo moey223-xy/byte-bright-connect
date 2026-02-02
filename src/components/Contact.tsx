@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Calendar, Loader2 } from "lucide-react";
+import { Phone, Mail, MapPin, Calendar, Loader2, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -18,6 +18,7 @@ interface FormData {
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -58,7 +59,8 @@ const Contact = () => {
         description: "We'll get back to you as soon as possible.",
       });
 
-      // Reset form
+      // Show confirmation and reset form
+      setIsSubmitted(true);
       setFormData({ name: "", email: "", business: "", message: "" });
     } catch (error) {
       console.error("Error sending message:", error);
@@ -86,83 +88,104 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="shadow-2xl rounded-2xl border-none">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-[#1F1F1F] mb-6">Send us a message</h3>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name" className="text-[#1F1F1F] font-semibold">
-                      Name *
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                      required
-                    />
+              {isSubmitted ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
-                  <div>
-                    <Label htmlFor="email" className="text-[#1F1F1F] font-semibold">
-                      Email *
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                      required
-                    />
-                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Message Sent!</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Thank you for reaching out. We'll get back to you as soon as possible.
+                  </p>
+                  <Button
+                    onClick={() => setIsSubmitted(false)}
+                    variant="outline"
+                    className="rounded-xl"
+                  >
+                    Send Another Message
+                  </Button>
                 </div>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Send us a message</h3>
 
-                <div>
-                  <Label htmlFor="business" className="text-[#1F1F1F] font-semibold">
-                    Business Name
-                  </Label>
-                  <Input
-                    id="business"
-                    name="business"
-                    value={formData.business}
-                    onChange={handleChange}
-                    className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                  />
-                </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name" className="text-foreground font-semibold">
+                          Name *
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="mt-2 rounded-xl border-gray-300 focus:border-primary focus:ring-primary"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email" className="text-foreground font-semibold">
+                          Email *
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="mt-2 rounded-xl border-gray-300 focus:border-primary focus:ring-primary"
+                          required
+                        />
+                      </div>
+                    </div>
 
-                <div>
-                  <Label htmlFor="message" className="text-[#1F1F1F] font-semibold">
-                    Brief IT Need *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="mt-2 rounded-xl border-gray-300 focus:border-[#2978F2] focus:ring-[#2978F2]"
-                    placeholder="Tell us about your IT challenges or goals..."
-                    required
-                  />
-                </div>
+                    <div>
+                      <Label htmlFor="business" className="text-foreground font-semibold">
+                        Business Name
+                      </Label>
+                      <Input
+                        id="business"
+                        name="business"
+                        value={formData.business}
+                        onChange={handleChange}
+                        className="mt-2 rounded-xl border-gray-300 focus:border-primary focus:ring-primary"
+                      />
+                    </div>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-[#2978F2] hover:bg-[#1F5FD4] text-white py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
-              </form>
+                    <div>
+                      <Label htmlFor="message" className="text-foreground font-semibold">
+                        Brief IT Need *
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="mt-2 rounded-xl border-gray-300 focus:border-primary focus:ring-primary"
+                        placeholder="Tell us about your IT challenges or goals..."
+                        required
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
             </CardContent>
           </Card>
 
