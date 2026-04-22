@@ -78,9 +78,9 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">Ready to Get Started?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">Let's Build Something Great</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Let's discuss how BigByte Tech can transform your IT infrastructure and help your business thrive.
+            Whether you have a software idea, a workflow to automate, or need rock-solid IT support—tell us about it and we'll get back to you fast.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ const Contact = () => {
 
                     <div>
                       <Label htmlFor="message" className="text-foreground font-semibold">
-                        Brief IT Need *
+                        Tell us about your project *
                       </Label>
                       <Textarea
                         id="message"
@@ -164,7 +164,7 @@ const Contact = () => {
                         onChange={handleChange}
                         rows={4}
                         className="mt-2 rounded-xl border-gray-300 focus:border-primary focus:ring-primary"
-                        placeholder="Tell us about your IT challenges or goals..."
+                        placeholder="A custom app, an automation, IT support... tell us what you're trying to achieve."
                         required
                       />
                     </div>
