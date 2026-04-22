@@ -10,14 +10,14 @@ const About = () => {
             
             <div className="space-y-6 text-lg text-gray-600">
               <p>
-                <strong className="text-[#1F1F1F]">From startup struggles to IT mastery.</strong> Our founder experienced firsthand the frustration of unreliable IT support that spoke in technical jargon instead of business solutions.
+                <strong className="text-[#1F1F1F]">A software studio for small &amp; medium business.</strong> We started BigByte Tech because too many businesses were stuck wrestling generic software into shape—or paying for IT that spoke in jargon instead of solutions.
               </p>
               
               <p>
-                That's why we built BigByte Tech differently. We believe technology should empower your business, not complicate it. Our team combines deep technical expertise with a genuine understanding of small business challenges.
+                We design and build custom web platforms, mobile apps, and automation tools that fit your business exactly—then back them up with the managed IT, VoIP, and infrastructure support to keep everything running.
               </p>
               
-              <p>Today, we're proud to be the trusted IT partner for multiple small businesses, helping them leverage technology to grow, compete, and thrive in the digital age.</p>
+              <p>One team. From the first line of code to the last support ticket—helping Australian businesses use technology as a competitive advantage.</p>
             </div>
 
             <div className="grid grid-cols-2 gap-8 mt-12">
