@@ -39,7 +39,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto text-center">
+          <div className="grid grid-cols-2 gap-8 max-w-xl mx-auto text-center">
             <div className="animate-fade-in" style={{
             animationDelay: '0.2s'
           }}>
@@ -51,12 +51,6 @@ const Hero = () => {
           }}>
               <div className="text-3xl font-bold text-[#2978F2]">99.9%</div>
               <div className="text-gray-600">Uptime</div>
-            </div>
-            <div className="animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }}>
-              <div className="text-3xl font-bold text-[#2978F2]">100+</div>
-              <div className="text-gray-600">Happy Clients</div>
             </div>
           </div>
         </div>
