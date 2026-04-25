@@ -9,7 +9,8 @@ const Footer = () => {
               BigByte<span className="text-[#2978F2]">Tech</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Custom software, mobile apps, automation and managed IT—built by a team that treats your business like our own.
+              Your trusted IT partner, providing comprehensive technology solutions for small businesses. 
+              Focus on growth while we handle your IT.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-[#2978F2] rounded-full flex items-center justify-center hover:bg-[#1F5FD4] transition-colors duration-300">
