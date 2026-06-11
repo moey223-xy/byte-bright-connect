@@ -1,0 +1,116 @@
+---
+import {
+  Globe,
+  ShoppingCart,
+  Search,
+  Wrench,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
+
+const features = [
+  {
+    icon: Globe,
+    title: "Custom Business Websites",
+    description: "Professional websites tailored to your business, brand, and goals.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Development",
+    description: "Online stores built for conversions, performance, and easy management.",
+  },
+  {
+    icon: Search,
+    title: "SEO-Optimised Development",
+    description: "Built with modern best practices to improve visibility in search engines and maximise organic traffic.",
+  },
+  {
+    icon: Wrench,
+    title: "Ongoing Support & Maintenance",
+    description: "Hosting, updates, security monitoring, backups, and ongoing improvements.",
+  },
+];
+
+const benefits = [
+  "Mobile-first responsive design",
+  "Fast loading performance",
+  "SEO-ready architecture",
+  "Secure and reliable hosting options",
+  "Conversion-focused layouts",
+  "Easy content management",
+];
+---
+
+<section
+  id="web-development"
+  class="py-20 bg-gradient-to-br from-white via-blue-50/30 to-white"
+  aria-labelledby="web-development-heading"
+>
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-[#2978F2] font-semibold uppercase tracking-wider mb-4">
+        Website Development
+      </p>
+      <h2 id="web-development-heading" class="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">
+        Modern Websites That Help Businesses Grow
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        We design and develop fast, responsive, SEO-friendly websites that help businesses attract customers, build credibility, and generate leads. Whether you need a simple business website, an e-commerce store, or a custom web solution, we create websites built for performance and growth.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {
+        features.map((feature) => (
+          <div class="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white rounded-2xl group h-full">
+            <div class="p-8 text-center flex flex-col h-full">
+              <div class="w-16 h-16 bg-[#2978F2]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2978F2] transition-colors duration-300">
+                <feature.icon className="h-8 w-8 text-[#2978F2] group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+              </div>
+              <h3 class="text-xl font-bold text-[#1F1F1F] mb-4">{feature.title}</h3>
+              <p class="text-gray-600 leading-relaxed flex-grow">{feature.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="bg-gradient-to-br from-white to-blue-50/30 shadow-lg rounded-2xl p-8 md:p-12 mb-16">
+      <div class="text-center mb-10">
+        <h3 class="text-2xl md:text-3xl font-bold text-[#1F1F1F] mb-4">
+          Every Website We Build Comes Standard With
+        </h3>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          From responsive web design to custom website development, we build every business website on a foundation made for long-term growth.
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {
+          benefits.map((benefit) => (
+            <li class="flex items-center space-x-3 bg-white shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl p-4">
+              <CheckCircle2 className="h-6 w-6 text-[#2978F2] flex-shrink-0" aria-hidden="true" />
+              <span class="text-[#1F1F1F] font-medium">{benefit}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="text-center max-w-3xl mx-auto">
+      <h3 class="text-2xl md:text-3xl font-bold text-[#1F1F1F] mb-4">
+        Ready to Build Your New Website?
+      </h3>
+      <p class="text-lg text-gray-600 mb-8">
+        Whether you're launching a new business, redesigning an existing website, or looking to improve your online presence, our team can help.
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+      >
+        Get a Free Consultation
+        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>
