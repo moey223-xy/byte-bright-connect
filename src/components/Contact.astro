@@ -1,0 +1,81 @@
+---
+import { Phone, Mail, MapPin, Calendar } from "lucide-react";
+import ContactForm from "./ContactForm";
+---
+
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">Ready to Get Started?</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Let's discuss how BigByte Tech can transform your IT infrastructure and help your business thrive.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Contact Form -->
+      <div class="bg-white shadow-2xl rounded-2xl">
+        <div class="p-8">
+          <ContactForm client:visible />
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <div class="bg-white shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
+          <div class="p-6 flex items-center space-x-4">
+            <div class="w-12 h-12 bg-[#2978F2] rounded-xl flex items-center justify-center">
+              <Phone className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#1F1F1F]">Phone</h4>
+              <p class="text-gray-600">
+                <a href="tel:+61485000516" class="hover:underline">0485 000 516</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
+          <div class="p-6 flex items-center space-x-4">
+            <div class="w-12 h-12 bg-[#2978F2] rounded-xl flex items-center justify-center">
+              <Mail className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#1F1F1F]">Email</h4>
+              <p class="text-gray-600">
+                <a href="mailto:info@bigbytetech.com.au" class="hover:underline">info@bigbytetech.com.au</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
+          <div class="p-6 flex items-center space-x-4">
+            <div class="w-12 h-12 bg-[#2978F2] rounded-xl flex items-center justify-center">
+              <MapPin className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h4 class="font-semibold text-[#1F1F1F]">Service Area</h4>
+              <p class="text-gray-600">Brisbane and Gold Coast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="shadow-lg rounded-2xl bg-[#2978F2] text-white hover:shadow-xl transition-shadow duration-300">
+          <div class="p-8 text-center">
+            <Calendar className="h-12 w-12 mx-auto mb-4" />
+            <h4 class="text-xl font-semibold mb-2">Give us a Call</h4>
+            <p class="mb-4">Speak with one of our IT experts now</p>
+            <a
+              href="tel:+61485000516"
+              class="inline-flex items-center justify-center border border-white bg-white text-[#2978F2] hover:bg-transparent hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

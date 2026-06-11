@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+# BigByte Tech — www.bigbytetech.com.au
 
-## Project info
+Marketing site for BigByte Tech, built with [Astro](https://astro.build) for fully
+prerendered, SEO-friendly HTML. The only client-side JavaScript is the contact form,
+which is a small React island that posts to a Supabase edge function.
 
-**URL**: https://lovable.dev/projects/b93d52a9-dd6f-42cd-8d5f-60c5ac37e079
+> Note: this project was migrated from a Lovable-generated Vite + React SPA to Astro.
+> It can no longer be edited through the Lovable visual editor.
 
-## How can I edit this code?
+## Tech stack
 
-There are several ways of editing your application.
+- Astro 5 (static output)
+- Tailwind CSS 3
+- React (contact form island only)
+- Supabase edge function (`supabase/functions/send-contact-email`) + Resend for contact emails
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/b93d52a9-dd6f-42cd-8d5f-60c5ac37e079) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev       # dev server on http://localhost:8080
+npm run build     # builds the static site into docs/
+npm run preview   # serves the production build locally
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+GitHub Pages serves the site from the `docs/` folder on `main`
+(custom domain configured via `public/CNAME`). To deploy:
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+git add docs && git commit && git push
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The build also emits `sitemap-index.xml`, `robots.txt`, and a `.nojekyll` marker
+(required so GitHub Pages serves the `_astro/` asset folder).
 
-## What technologies are used for this project?
+## Environment variables
 
-This project is built with:
+`.env` (inlined into the static build at build time — these are public anon values):
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b93d52a9-dd6f-42cd-8d5f-60c5ac37e079) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- `PUBLIC_SUPABASE_URL`
+- `PUBLIC_SUPABASE_PUBLISHABLE_KEY`

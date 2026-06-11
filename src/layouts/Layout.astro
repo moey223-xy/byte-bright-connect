@@ -1,0 +1,95 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "BigByte Tech - IT Peace of Mind for Small Businesses",
+  description = "Managed IT support, network security, and cloud solutions for small businesses in Brisbane and the Gold Coast. 24/7 support with transparent pricing.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/favicon.png", Astro.site);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "BigByte Tech",
+  description:
+    "Managed IT support, network security, and cloud solutions for small businesses.",
+  url: Astro.site?.toString(),
+  logo: ogImage.toString(),
+  image: ogImage.toString(),
+  telephone: "+61485000516",
+  email: "info@bigbytetech.com.au",
+  foundingDate: "2020",
+  areaServed: [
+    { "@type": "City", name: "Brisbane" },
+    { "@type": "City", name: "Gold Coast" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "QLD",
+    addressCountry: "AU",
+  },
+  serviceType: [
+    "Managed IT Support Services",
+    "Business Phone & VoIP Solutions",
+    "Cloud Migration & Backup",
+    "Business Efficiency & Automation",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="BigByte Tech" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="BigByte Tech" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bigbytetech" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

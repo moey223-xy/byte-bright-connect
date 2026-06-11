@@ -1,0 +1,39 @@
+<nav
+  id="site-nav"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6"
+>
+  <div class="container mx-auto px-6 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold text-[#1F1F1F]" aria-label="BigByte Tech home">
+      BigByte<span class="text-[#2978F2]">Tech</span>
+    </a>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#services" class="text-[#1F1F1F] hover:text-[#2978F2] transition-colors">Services</a>
+      <a href="#about" class="text-[#1F1F1F] hover:text-[#2978F2] transition-colors">About</a>
+      <a href="#process" class="text-[#1F1F1F] hover:text-[#2978F2] transition-colors">Process</a>
+      <a href="#contact" class="text-[#1F1F1F] hover:text-[#2978F2] transition-colors">Contact</a>
+    </div>
+
+    <a
+      href="#contact"
+      class="inline-flex items-center justify-center bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-6 py-2 rounded-2xl text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+    >
+      Get Started
+    </a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  const scrolledClasses = ["bg-white/90", "backdrop-blur-md", "shadow-lg", "py-3"];
+  const topClasses = ["bg-transparent", "py-6"];
+
+  const update = () => {
+    const isScrolled = window.scrollY > 50;
+    nav?.classList.remove(...(isScrolled ? topClasses : scrolledClasses));
+    nav?.classList.add(...(isScrolled ? scrolledClasses : topClasses));
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+</script>
