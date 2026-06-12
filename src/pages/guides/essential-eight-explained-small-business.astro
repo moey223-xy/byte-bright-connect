@@ -10,12 +10,12 @@ const faqs = [
   {
     question: "What maturity level should a small business aim for?",
     answer:
-      "For most small businesses, Maturity Level One is the realistic and sensible target — it's designed to counter commodity attacks, which is what small businesses overwhelmingly face. Aim higher only if you hold particularly sensitive data or a contract requires it.",
+      "For most small businesses, Maturity Level One is the realistic and sensible target. It's designed to counter commodity attacks, which is what small businesses overwhelmingly face. Aim higher only if you hold particularly sensitive data or a contract requires it.",
   },
   {
     question: "How much does Essential Eight implementation cost?",
     answer:
-      "Several of the eight cost little or nothing — turning on MFA, enforcing macro settings and removing unnecessary admin rights are mostly configuration work. The bigger investments are application control tooling and a proper tested backup regime. A staged rollout spreads the cost; you don't have to do all eight at once.",
+      "Several of the eight cost little or nothing. Turning on MFA, enforcing macro settings and removing unnecessary admin rights are mostly configuration work. The bigger investments are application control tooling and a proper tested backup regime. A staged rollout spreads the cost; you don't have to do all eight at once.",
   },
   {
     question: "Who is behind the Essential Eight?",
@@ -46,9 +46,9 @@ const related = [
 
 <ArticleLayout
   title="The Essential Eight Explained for Small Business | BigByte Tech"
-  description="A plain-English guide to the ACSC Essential Eight for Australian small businesses — what each control means, maturity levels, and where to start without breaking the budget."
+  description="A plain-English guide to the ACSC Essential Eight for Australian small businesses: what each control means, maturity levels, and where to start without breaking the budget."
   heading="The Essential Eight, Explained for Small Business Owners"
-  intro="Australia's official cyber security baseline, translated from government-speak into plain English — and into a practical order of attack for a small business budget."
+  intro="Australia's official cyber security baseline, translated from government-speak into plain English, and into a practical order of attack for a small business budget."
   breadcrumb="Essential Eight Explained"
   faqs={faqs}
   related={related}
@@ -64,7 +64,7 @@ const related = [
   </p>
   <p>
     It's mandatory for federal government entities and voluntary for everyone
-    else — but "voluntary" is doing less work every year. Larger customers now
+    else, but "voluntary" is doing less work every year. Larger customers now
     ask their suppliers about it, and cyber insurance questionnaires are
     essentially an Essential Eight quiz with a premium attached.
   </p>
@@ -85,10 +85,10 @@ const related = [
   <p>
     <strong>Update your software promptly.</strong> Attackers don't usually
     break in through cleverness; they walk in through publicly known holes in
-    out-of-date software — browsers, PDF readers, accounting packages. The
-    control is simply: apply security updates quickly (within 48 hours for
-    actively exploited vulnerabilities), and stop using software the vendor no
-    longer supports.
+    out-of-date software such as browsers, PDF readers and accounting
+    packages. The control is simply: apply security updates quickly (within
+    48 hours for actively exploited vulnerabilities), and stop using software
+    the vendor no longer supports.
   </p>
 
   <h3>3. Configure Microsoft Office macro settings</h3>
@@ -104,8 +104,8 @@ const related = [
   <p>
     <strong>Turn off the risky features you don't use.</strong> Browsers and
     Office apps ship with legacy features that attackers love and almost no
-    small business needs — Internet Explorer 11, ancient plug-in tech, Office
-    child processes. Hardening means switching those off.
+    small business needs, like Internet Explorer 11, ancient plug-in tech and
+    Office child processes. Hardening means switching those off.
   </p>
 
   <h3>5. Restrict administrative privileges</h3>
@@ -119,7 +119,7 @@ const related = [
 
   <h3>6. Patch operating systems</h3>
   <p>
-    <strong>Keep Windows (and macOS) updated — and supported.</strong> The
+    <strong>Keep Windows (and macOS) updated, and supported.</strong> The
     same logic as patching applications, applied to the operating system
     itself. This includes not running operating systems past their end of
     support, when security fixes stop arriving no matter how dangerous the
@@ -129,10 +129,10 @@ const related = [
   <h3>7. Multi-factor authentication (MFA)</h3>
   <p>
     <strong>A password alone is not enough.</strong> MFA adds a second proof
-    of identity — an app prompt or hardware key — so a stolen password no
-    longer equals a stolen account. It's the single highest-value, lowest-cost
-    control on this list. If you do exactly one thing after reading this
-    page, turn on MFA for email and remote access.
+    of identity, such as an app prompt or hardware key, so a stolen password
+    no longer equals a stolen account. It's the single highest-value,
+    lowest-cost control on this list. If you do exactly one thing after
+    reading this page, turn on MFA for email and remote access.
   </p>
 
   <h3>8. Regular backups</h3>
@@ -141,7 +141,7 @@ const related = [
     it.</strong> Backups are what turn ransomware from an existential event
     into a bad week. The control requires backups that are regular, kept
     separate from your live systems (so an attacker can't encrypt them too),
-    retained appropriately, and — the part everyone skips —
+    retained appropriately, and, the part everyone skips,
     <em>tested by actually restoring them</em>. We cover the practical side in
     our
     <a href="/guides/cloud-backup-vs-local-backup/"
@@ -164,7 +164,7 @@ const related = [
     <tbody>
       <tr>
         <td><strong>Level 0</strong></td>
-        <td>Significant gaps — the control is absent or trivially bypassed.</td>
+        <td>Significant gaps: the control is absent or trivially bypassed.</td>
       </tr>
       <tr>
         <td><strong>Level 1</strong></td>
@@ -192,7 +192,7 @@ const related = [
   </table>
   <p>
     Importantly, the ACSC says to implement all eight controls to the same
-    maturity level before climbing higher — a Level 3 firewall next to Level 0
+    maturity level before climbing higher. A Level 3 firewall next to Level 0
     backups is theatre, not security.
   </p>
 
@@ -202,7 +202,7 @@ const related = [
     are pushing it onto you anyway: <strong>customers</strong> adding security
     questions to supplier onboarding, <strong>insurers</strong> pricing
     premiums off these exact controls, and the
-    <strong>Privacy Act</strong> — if you're covered by the Notifiable Data
+    <strong>Privacy Act</strong>. If you're covered by the Notifiable Data
     Breaches scheme, demonstrating baseline controls like these is central to
     showing you took reasonable steps to protect personal information.
   </p>
@@ -211,27 +211,27 @@ const related = [
   <p>For a typical small business, this sequencing gets the most protection per dollar:</p>
   <ol>
     <li>
-      <strong>MFA everywhere</strong> — email, Microsoft 365, remote access,
+      <strong>MFA everywhere</strong>: email, Microsoft 365, remote access,
       banking. Days of effort, massive risk reduction.
     </li>
     <li>
-      <strong>Backups done properly</strong> — separated from live systems
+      <strong>Backups done properly</strong>, separated from live systems
       and restore-tested.
     </li>
     <li>
-      <strong>Patching on autopilot</strong> — automatic OS and application
+      <strong>Patching on autopilot</strong>: automatic OS and application
       updates, with someone verifying they actually applied.
     </li>
     <li>
-      <strong>Strip admin rights</strong> — standard accounts for daily work,
+      <strong>Strip admin rights</strong>: standard accounts for daily work,
       including the boss.
     </li>
     <li>
-      <strong>Macro settings and hardening</strong> — mostly configuration,
+      <strong>Macro settings and hardening</strong>: mostly configuration,
       mostly invisible to staff.
     </li>
     <li>
-      <strong>Application control last</strong> — highest effort; tackle it
+      <strong>Application control last</strong>: highest effort; tackle it
       once the rest is stable.
     </li>
   </ol>
@@ -239,7 +239,7 @@ const related = [
   <div class="callout">
     <p>
       <strong>Want the broader picture first?</strong> The Essential Eight is
-      the technical core, but people and process matter too — our
+      the technical core, but people and process matter too. Our
       <a href="/guides/small-business-cyber-security-checklist/"
         >small business cyber security checklist</a
       > covers the full picture, including what to do if an incident happens.

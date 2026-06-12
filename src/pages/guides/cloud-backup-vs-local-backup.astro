@@ -5,7 +5,7 @@ const faqs = [
   {
     question: "Isn't OneDrive/SharePoint/Google Drive already a backup?",
     answer:
-      "No — it's sync, not backup. If a file is deleted, corrupted or encrypted by ransomware on one device, the cloud copy faithfully updates to match. Retention features help with small accidents, but they're limited and not designed for recovery from a serious incident. A real backup is a separate, independent copy with its own retention history.",
+      "No, it's sync, not backup. If a file is deleted, corrupted or encrypted by ransomware on one device, the cloud copy faithfully updates to match. Retention features help with small accidents, but they're limited and not designed for recovery from a serious incident. A real backup is a separate, independent copy with its own retention history.",
   },
   {
     question: "How often should a small business back up?",
@@ -15,12 +15,12 @@ const faqs = [
   {
     question: "What does business backup actually cost?",
     answer:
-      "Typically tens of dollars per month for a small business — cloud backup is commonly priced per computer or per terabyte, and Microsoft 365 backup per user at a few dollars each. A local NAS device adds a few hundred to a couple of thousand dollars up front. Compare that to the cost of a week's downtime and the maths ends quickly.",
+      "Typically tens of dollars per month for a small business. Cloud backup is commonly priced per computer or per terabyte, and Microsoft 365 backup per user at a few dollars each. A local NAS device adds a few hundred to a couple of thousand dollars up front. Compare that to the cost of a week's downtime and the maths ends quickly.",
   },
   {
     question: "How long should backups be kept?",
     answer:
-      "Longer than you think. Ransomware can sit quietly before triggering, and accounting errors can surface months later — if you keep only two weeks of history, you may find every copy is already corrupted. A common scheme keeps daily backups for a few weeks, weeklies for a few months, and monthlies for a year or more. Some records also have legal retention requirements in Australia (commonly five to seven years for financial records).",
+      "Longer than you think. Ransomware can sit quietly before triggering, and accounting errors can surface months later; if you keep only two weeks of history, you may find every copy is already corrupted. A common scheme keeps daily backups for a few weeks, weeklies for a few months, and monthlies for a year or more. Some records also have legal retention requirements in Australia (commonly five to seven years for financial records).",
   },
 ];
 
@@ -46,9 +46,9 @@ const related = [
 
 <ArticleLayout
   title="Cloud Backup vs Local Backup for Small Business | BigByte Tech"
-  description="Cloud or local backup — or both? How the 3-2-1 rule works, why Microsoft 365 isn't a backup, and how to build a backup strategy that survives ransomware."
+  description="Cloud or local backup, or both? How the 3-2-1 rule works, why Microsoft 365 isn't a backup, and how to build a backup strategy that survives ransomware."
   heading="Cloud Backup vs Local Backup: What Small Businesses Actually Need"
-  intro="The cloud-versus-local debate has a boring answer — you want both — but how you combine them decides whether ransomware is a bad week or the end of your business."
+  intro="The cloud-versus-local debate has a boring answer (you want both), but how you combine them decides whether ransomware is a bad week or the end of your business."
   breadcrumb="Cloud vs Local Backup"
   faqs={faqs}
   related={related}
@@ -57,7 +57,7 @@ const related = [
   <p>
     Cloud backup and local backup fail in different ways, which is exactly why
     you want both. Local backups restore fast but burn in the same fire, flood
-    or burglary as the originals — a real consideration in South East
+    or burglary as the originals: a real consideration in South East
     Queensland, where storm and flood seasons are not hypothetical. Cloud
     backups survive anything that happens to your office but restore slowly
     and depend on your internet connection. The standard that combines them
@@ -67,30 +67,30 @@ const related = [
   <h2>The 3-2-1 rule in plain English</h2>
   <ul>
     <li>
-      <strong>3 copies of your data</strong> — the live original plus two
+      <strong>3 copies of your data</strong>: the live original plus two
       backups. One backup is none, because the day you need it is the day you
       discover it stopped working in March.
     </li>
     <li>
-      <strong>2 different types of storage</strong> — for example, a local
+      <strong>2 different types of storage</strong>: for example, a local
       backup device plus a cloud service, so one fault type can't take out
       both.
     </li>
     <li>
-      <strong>1 copy off-site</strong> — physically elsewhere, so nothing
+      <strong>1 copy off-site</strong>: physically elsewhere, so nothing
       that happens at your premises can touch it.
     </li>
   </ul>
   <p>
     The modern addendum, driven by ransomware, is that the off-site copy
-    should also be <strong>offline or immutable</strong> — unreachable or
+    should also be <strong>offline or immutable</strong>: unreachable or
     unchangeable even by someone holding your administrator passwords. More on
     that below.
   </p>
 
   <h2>Local backup: strengths and limits</h2>
   <p>
-    Local backup means copies on hardware you control — typically a NAS
+    Local backup means copies on hardware you control, typically a NAS
     (network storage device) or rotated external drives.
   </p>
   <ul>
@@ -101,7 +101,7 @@ const related = [
     </li>
     <li>
       <strong>Limits:</strong> shares your office's fate in fire, flood and
-      theft; hardware fails silently with age; and — critically — a backup
+      theft; hardware fails silently with age; and, critically, a backup
       device that's always connected and writable is just another victim when
       ransomware spreads across the network.
     </li>
@@ -120,14 +120,14 @@ const related = [
     </li>
     <li>
       <strong>Limits:</strong> full restores are bound by your internet
-      speed — downloading terabytes takes days on many connections; ongoing
-      subscription cost; and you must check where data is stored (Australian
-      data residency matters for some industries) and what the provider's own
-      security looks like.
+      speed, and downloading terabytes takes days on many connections;
+      ongoing subscription cost; and you must check where data is stored
+      (Australian data residency matters for some industries) and what the
+      provider's own security looks like.
     </li>
   </ul>
 
-  <h2>"We use Microsoft 365, so we're backed up" — why that's wrong</h2>
+  <h2>"We use Microsoft 365, so we're backed up": why that's wrong</h2>
   <p>
     This is the most common and most dangerous backup misconception in small
     business. OneDrive and SharePoint <strong>synchronise</strong> files;
@@ -135,7 +135,7 @@ const related = [
     and the cloud copy obediently follows. Retention and recycle-bin features
     soften small accidents, but they have limits, and Microsoft's own
     shared-responsibility model is explicit: the data is yours to protect.
-    Staff turnover is the sleeper issue — when a departed employee's account
+    Staff turnover is the sleeper issue. When a departed employee's account
     is deleted, their files and mailbox follow on a timer unless something
     else is preserving them. Purpose-built Microsoft 365 backup costs a few
     dollars per user per month and closes all of this.
@@ -143,7 +143,7 @@ const related = [
 
   <h2>Ransomware changes everything</h2>
   <p>
-    Modern ransomware crews understand backups perfectly — encrypting or
+    Modern ransomware crews understand backups perfectly. Encrypting or
     deleting them is step one of the playbook, because victims with working
     backups don't pay. That's why backups are one of the
     <a href="/guides/essential-eight-explained-small-business/"
@@ -153,12 +153,12 @@ const related = [
   <ul>
     <li>
       <strong>Separation:</strong> at least one backup copy must be
-      unreachable from your normal network and admin credentials — offline
-      media, or a cloud service with separate authentication.
+      unreachable from your normal network and admin credentials, whether
+      that's offline media or a cloud service with separate authentication.
     </li>
     <li>
       <strong>Immutability:</strong> good backup platforms can make
-      snapshots unchangeable for a set period — not even an administrator
+      snapshots unchangeable for a set period. Not even an administrator
       (or an attacker holding admin passwords) can alter or delete them
       until the period expires.
     </li>
@@ -169,7 +169,7 @@ const related = [
     Almost every backup disaster story includes the phrase "we thought it was
     backing up". Backup jobs fail quietly: full disks, changed passwords,
     folders renamed and silently excluded. The fix is a
-    <strong>quarterly restore test</strong> — actually restore a file, a
+    <strong>quarterly restore test</strong>. Actually restore a file, a
     folder and (annually) a whole system, time it, and write the result down.
     The timing matters because it tells you your real recovery window: if a
     full restore takes three days and your business can survive one, you've
@@ -180,11 +180,11 @@ const related = [
   <ol>
     <li>
       <strong>Local:</strong> a NAS taking automatic backups of
-      servers and key machines — your fast-restore tier.
+      servers and key machines. This is your fast-restore tier.
     </li>
     <li>
       <strong>Cloud:</strong> encrypted, versioned, ideally immutable
-      backups off-site — your disaster tier.
+      backups off-site. This is your disaster tier.
     </li>
     <li>
       <strong>Microsoft 365 backup:</strong> per-user protection of mail,
@@ -203,7 +203,7 @@ const related = [
       monitoring and quarterly restore testing are standard inclusions in our
       <a href="/services/managed-it-support-brisbane/"
         >managed IT support</a
-      > — or <a href="/#contact">ask us for a one-off backup health check</a>
+      >, or <a href="/#contact">ask us for a one-off backup health check</a>
       and we'll tell you exactly where you stand.
     </p>
   </div>
