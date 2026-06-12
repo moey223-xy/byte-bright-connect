@@ -1,0 +1,347 @@
+---
+import Layout from "./Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { ArrowRight } from "lucide-react";
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface RelatedLink {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  intro: string;
+  breadcrumb: string;
+  breadcrumbBase?: { label: string; href: string };
+  datePublished?: string;
+  faqs?: FAQ[];
+  related?: RelatedLink[];
+}
+
+const {
+  title,
+  description,
+  heading,
+  intro,
+  breadcrumb,
+  breadcrumbBase = { label: "Guides", href: "/guides/" },
+  datePublished = "2026-06-12",
+  faqs = [],
+  related = [],
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: heading,
+  description,
+  datePublished,
+  dateModified: datePublished,
+  inLanguage: "en-AU",
+  mainEntityOfPage: canonicalURL.toString(),
+  author: {
+    "@type": "Organization",
+    name: "BigByte Tech",
+    url: Astro.site?.toString(),
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "BigByte Tech",
+    url: Astro.site?.toString(),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: breadcrumbBase.label,
+      item: new URL(breadcrumbBase.href, Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: breadcrumb,
+      item: canonicalURL.toString(),
+    },
+  ],
+};
+
+const faqSchema =
+  faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
+---
+
+<Layout title={title} description={description}>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(articleSchema)}
+  />
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(breadcrumbSchema)}
+  />
+  {
+    faqSchema && (
+      <script
+        slot="head"
+        type="application/ld+json"
+        set:html={JSON.stringify(faqSchema)}
+      />
+    )
+  }
+
+  <div class="min-h-screen bg-white">
+    <Navigation />
+
+    <main>
+      <header
+        class="bg-gradient-to-br from-white via-blue-50/30 to-white pt-32 pb-12"
+      >
+        <div class="container mx-auto px-6 max-w-4xl">
+          <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500">
+            <ol class="flex flex-wrap items-center gap-2">
+              <li>
+                <a href="/" class="hover:text-[#2978F2] transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <a
+                  href={breadcrumbBase.href}
+                  class="hover:text-[#2978F2] transition-colors"
+                  >{breadcrumbBase.label}</a
+                >
+              </li>
+              <li aria-hidden="true">/</li>
+              <li class="text-[#1F1F1F] font-medium" aria-current="page">
+                {breadcrumb}
+              </li>
+            </ol>
+          </nav>
+
+          <h1
+            class="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6 leading-tight"
+          >
+            {heading}
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">{intro}</p>
+        </div>
+      </header>
+
+      <article class="py-12">
+        <div class="container mx-auto px-6 max-w-4xl article-body">
+          <slot />
+        </div>
+      </article>
+
+      {
+        faqs.length > 0 && (
+          <section
+            class="py-12 bg-gray-50"
+            aria-labelledby="faq-heading"
+          >
+            <div class="container mx-auto px-6 max-w-4xl">
+              <h2
+                id="faq-heading"
+                class="text-3xl font-bold text-[#1F1F1F] mb-8"
+              >
+                Frequently Asked Questions
+              </h2>
+              <div class="space-y-4">
+                {faqs.map((faq) => (
+                  <details class="bg-white rounded-2xl shadow-md p-6 group">
+                    <summary class="text-lg font-semibold text-[#1F1F1F] cursor-pointer list-none flex justify-between items-center">
+                      {faq.question}
+                      <span
+                        class="text-[#2978F2] ml-4 transition-transform group-open:rotate-45 text-2xl leading-none"
+                        aria-hidden="true"
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p class="text-gray-600 leading-relaxed mt-4">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      }
+
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div
+            class="bg-gradient-to-br from-[#2978F2] to-[#1F5FD4] rounded-2xl p-8 md:p-12 text-center text-white shadow-xl"
+          >
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+              Talk to a local IT expert
+            </h2>
+            <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              Get straight answers about your IT — no jargon, no obligation.
+              We support small businesses across Brisbane and the Gold Coast.
+            </p>
+            <a
+              href="/#contact"
+              class="inline-flex items-center justify-center bg-white text-[#2978F2] hover:bg-blue-50 px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 group"
+            >
+              Get Your Free Consultation
+              <ArrowRight
+                className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {
+        related.length > 0 && (
+          <section class="pb-16 bg-white" aria-labelledby="related-heading">
+            <div class="container mx-auto px-6 max-w-4xl">
+              <h2
+                id="related-heading"
+                class="text-2xl font-bold text-[#1F1F1F] mb-6"
+              >
+                Related guides
+              </h2>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {related.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="block bg-gray-50 hover:bg-blue-50 rounded-xl p-5 font-medium text-[#1F1F1F] hover:text-[#2978F2] transition-colors shadow-sm"
+                    >
+                      {link.title} →
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )
+      }
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style is:global>
+  .article-body h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+  }
+  .article-body h2:first-child {
+    margin-top: 0;
+  }
+  .article-body h3 {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .article-body p {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .article-body ul,
+  .article-body ol {
+    color: #4b5563;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin: 0 0 1.25rem 1.5rem;
+  }
+  .article-body ul {
+    list-style: disc;
+  }
+  .article-body ol {
+    list-style: decimal;
+  }
+  .article-body li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+  .article-body a {
+    color: #2978f2;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .article-body a:hover {
+    color: #1f5fd4;
+  }
+  .article-body strong {
+    color: #1f1f1f;
+  }
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 1rem;
+  }
+  .article-body th {
+    background: #f3f6fc;
+    color: #1f1f1f;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e5e7eb;
+  }
+  .article-body td {
+    color: #4b5563;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+  .article-body .callout {
+    background: #f0f6ff;
+    border-left: 4px solid #2978f2;
+    border-radius: 0 1rem 1rem 0;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .article-body .callout p {
+    margin-bottom: 0;
+  }
+</style>

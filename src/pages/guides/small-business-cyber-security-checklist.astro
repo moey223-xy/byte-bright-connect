@@ -1,0 +1,219 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "How much should a small business spend on cyber security?",
+    answer:
+      "Less than you might fear. Most of this checklist is configuration and habit, not products: MFA, automatic updates, removing admin rights and macro restrictions are close to free. The genuine spends are a proper backup solution, business-grade email filtering and, ideally, security awareness training — typically tens of dollars per user per month combined, not hundreds.",
+  },
+  {
+    question: "We're tiny — would anyone really bother attacking us?",
+    answer:
+      "Attackers don't choose small businesses; their software does. Automated tools scan the whole internet for weak passwords, missing MFA and unpatched systems, and compromise whatever they find. Small businesses are over-represented in incident statistics precisely because they're the easiest automated catch.",
+  },
+  {
+    question: "Does cyber insurance replace doing this checklist?",
+    answer:
+      "No — it increasingly requires it. Insurers commonly ask about MFA, backups, and patching before issuing or renewing a policy, and claims can be reduced or denied if the answers turn out to be untrue. Do the checklist first; insurance then covers the residual risk.",
+  },
+  {
+    question: "Where do I report a cybercrime in Australia?",
+    answer:
+      "Through ReportCyber at cyber.gov.au, which routes reports to the right law enforcement agency. For scams, also report to Scamwatch. If personal information was exposed and your business is covered by the Privacy Act, you may also have obligations under the Notifiable Data Breaches scheme via the OAIC.",
+  },
+];
+
+const related = [
+  {
+    title: "The Essential Eight explained for small business",
+    href: "/guides/essential-eight-explained-small-business/",
+  },
+  {
+    title: "Cloud backup vs local backup (and the 3-2-1 rule)",
+    href: "/guides/cloud-backup-vs-local-backup/",
+  },
+  {
+    title: "Managed IT support in Brisbane",
+    href: "/services/managed-it-support-brisbane/",
+  },
+  {
+    title: "IT support on the Gold Coast",
+    href: "/services/it-support-gold-coast/",
+  },
+];
+---
+
+<ArticleLayout
+  title="Small Business Cyber Security Checklist (Australia, 2026) | BigByte Tech"
+  description="A practical cyber security checklist for Australian small businesses: 15 actions covering passwords, MFA, backups, email security, staff training and incident response."
+  heading="The Small Business Cyber Security Checklist for Australia"
+  intro="Fifteen practical actions — most free or cheap — that close the gaps attackers actually use against Australian small businesses. Work through them in order."
+  breadcrumb="Cyber Security Checklist"
+  faqs={faqs}
+  related={related}
+>
+  <h2>Why small businesses are targeted</h2>
+  <p>
+    There's a persistent myth that cyber criminals only chase big companies.
+    The reality is the opposite: attacks on small businesses are mostly
+    <strong>automated and indiscriminate</strong>. Software scans the internet
+    for reused passwords, accounts without multi-factor authentication and
+    unpatched systems, then compromises whatever it finds — a 6-person
+    accounting firm in Logan just as happily as a multinational. Small
+    businesses get hit more often because they're the easier automated catch,
+    and they recover more slowly because there's no IT department waiting.
+  </p>
+  <p>
+    The good news: because most attacks are opportunistic, basic controls
+    block the overwhelming majority of them. That's what this checklist is.
+    It's aligned with the guidance from the Australian Cyber Security Centre
+    (cyber.gov.au) and its
+    <a href="/guides/essential-eight-explained-small-business/"
+      >Essential Eight</a
+    >, translated into actions you can actually schedule.
+  </p>
+
+  <h2>Identity and access</h2>
+  <p>
+    <strong>1. Turn on multi-factor authentication (MFA) everywhere.</strong>
+    Email first, then Microsoft 365/Google Workspace, accounting software,
+    banking and remote access. This is the single most effective control on
+    this page; a stolen password stops being a stolen account.
+  </p>
+  <p>
+    <strong>2. Use a password manager and kill password reuse.</strong>
+    One reused password plus one breached website equals attackers holding a
+    working key to your systems. A business password manager makes unique
+    passwords the path of least resistance.
+  </p>
+  <p>
+    <strong>3. Remove admin rights from daily-use accounts.</strong>
+    Everyone — including the owner — works from a standard account. Admin
+    accounts exist separately and get used only when needed.
+  </p>
+  <p>
+    <strong>4. Offboard departing staff the same day.</strong>
+    Disable accounts, revoke access to shared systems, and change any shared
+    passwords. Dormant accounts of ex-employees are a classic, entirely
+    avoidable way in.
+  </p>
+
+  <h2>Devices and updates</h2>
+  <p>
+    <strong>5. Turn on automatic updates — and verify them.</strong>
+    Windows, macOS, browsers, and your line-of-business apps. The verification
+    step matters: machines that quietly stopped updating months ago are
+    common, and they're exactly what attackers scan for.
+  </p>
+  <p>
+    <strong>6. Retire unsupported systems.</strong>
+    Software past its end of support receives no security fixes, ever. If a
+    machine can't be upgraded, isolate it or replace it.
+  </p>
+  <p>
+    <strong>7. Encrypt and protect every device.</strong>
+    Disk encryption (BitLocker/FileVault) on, screen locks on, and reputable
+    endpoint protection on every computer. A laptop left in an Uber should be
+    an inconvenience, not a data breach.
+  </p>
+
+  <h2>Email and phishing</h2>
+  <p>
+    <strong>8. Add business-grade email filtering.</strong>
+    The default spam filter catches spam; it's weaker against targeted
+    phishing and malicious attachments. Dedicated filtering in front of your
+    mailboxes blocks most threats before a human can click them.
+  </p>
+  <p>
+    <strong>9. Block Office macros from the internet.</strong>
+    "Enable macros to view this invoice" remains one of the most common
+    attacks against Australian businesses. Almost nobody needs internet-sourced
+    macros; block them centrally.
+  </p>
+  <p>
+    <strong>10. Make payment changes phone-verified, always.</strong>
+    Business email compromise — a convincing email asking to change bank
+    details for an invoice — costs Australian businesses more than ransomware
+    does. The fix is procedural, not technical: any change to payment details
+    is confirmed by phone, on a number you already had.
+  </p>
+
+  <h2>Backups</h2>
+  <p>
+    <strong>11. Follow the 3-2-1 rule.</strong>
+    Three copies of your data, on two different types of storage, one of them
+    off-site (and ideally offline or immutable, so ransomware can't reach
+    it). Full details in our
+    <a href="/guides/cloud-backup-vs-local-backup/"
+      >cloud vs local backup guide</a
+    >.
+  </p>
+  <p>
+    <strong>12. Test a restore quarterly.</strong>
+    Pick a file, a folder, a mailbox — restore it, time it, note what went
+    wrong. An untested backup is a hope, not a plan.
+  </p>
+
+  <h2>People and process</h2>
+  <p>
+    <strong>13. Run short, regular security awareness training.</strong>
+    Ten minutes a quarter beats a two-hour annual lecture. Staff who've seen
+    simulated phishing emails recognise real ones.
+  </p>
+  <p>
+    <strong>14. Write a one-page incident plan.</strong>
+    Who do staff call when something looks wrong? Who can authorise shutting
+    systems down? Where are the cyber insurance and IT provider numbers?
+    Deciding this during an incident is the expensive way.
+  </p>
+  <p>
+    <strong>15. Know your legal obligations.</strong>
+    If your business is covered by the Privacy Act (generally turnover above
+    $3 million, plus health providers and some others regardless of size),
+    the <strong>Notifiable Data Breaches scheme</strong> requires you to
+    assess suspected breaches and notify the OAIC and affected individuals
+    when a breach is likely to cause serious harm. Knowing this before an
+    incident changes how you respond.
+  </p>
+
+  <h2>If something goes wrong</h2>
+  <ol>
+    <li>
+      <strong>Contain first:</strong> disconnect affected machines from the
+      network — but don't wipe them; evidence matters.
+    </li>
+    <li>
+      <strong>Call for help:</strong> your IT provider, your bank if money
+      moved, and your cyber insurer (early — policies often require it).
+    </li>
+    <li>
+      <strong>Report it:</strong> via ReportCyber at cyber.gov.au; scams also
+      go to Scamwatch.
+    </li>
+    <li>
+      <strong>Assess notification obligations</strong> under the NDB scheme if
+      personal information was involved.
+    </li>
+    <li>
+      <strong>Recover from clean backups</strong>, reset credentials, and fix
+      the hole that let the attacker in before going back to business as
+      usual.
+    </li>
+  </ol>
+
+  <div class="callout">
+    <p>
+      <strong>Honest scoring:</strong> most small businesses we audit pass
+      four or five of these fifteen. If that's you, don't panic — items 1, 5
+      and 11 alone eliminate most of your real-world risk, and all three can
+      be done inside a fortnight. If you'd rather have it handled for you,
+      that's literally our job:
+      <a href="/services/managed-it-support-brisbane/"
+        >managed IT support in Brisbane</a
+      > and
+      <a href="/services/it-support-gold-coast/">the Gold Coast</a> includes
+      this entire checklist as standard.
+    </p>
+  </div>
+</ArticleLayout>

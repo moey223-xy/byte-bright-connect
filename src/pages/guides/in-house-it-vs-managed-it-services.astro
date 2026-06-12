@@ -1,0 +1,211 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "At what size does hiring in-house IT make sense?",
+    answer:
+      "There's no magic number, but the pattern is consistent: below about 50 staff, a full-time IT hire is hard to justify on cost and coverage; from roughly 50–100 staff, a hybrid of one internal person plus an MSP works well; beyond that, an internal team supplemented by specialists becomes viable. Complexity moves the threshold — a 30-person business running bespoke systems may need internal IT sooner.",
+  },
+  {
+    question: "Can a managed provider really know our systems as well as an employee would?",
+    answer:
+      "A good one knows them better — because documentation is how MSPs function. An employee's knowledge often lives in their head and leaves with them; an MSP's knowledge has to live in shared documentation that survives any individual. Ask prospective providers how they document client environments and you'll see this immediately.",
+  },
+  {
+    question: "What's co-managed IT?",
+    answer:
+      "An arrangement where your internal IT person handles day-to-day support and local knowledge, while an MSP provides the monitoring platform, security tooling, after-hours coverage, escalation depth and holiday cover. It solves the two biggest weaknesses of a one-person IT department: coverage gaps and skill ceilings.",
+  },
+  {
+    question: "Won't outsourcing mean slower support than someone down the hall?",
+    answer:
+      "For the issues that actually stop work, no. The person down the hall is one person — at lunch, in a meeting, on leave, or already busy with someone else's problem. A managed helpdesk parallelises: multiple technicians, remote tools that connect in seconds, and an SLA that guarantees response. What you lose is the walk-up convenience for trivial questions; what you gain is certainty on the issues that matter.",
+  },
+];
+
+const related = [
+  {
+    title: "How much does managed IT support cost in Australia?",
+    href: "/guides/managed-it-support-cost-australia/",
+  },
+  {
+    title: "How to choose an IT support company",
+    href: "/guides/how-to-choose-an-it-support-company/",
+  },
+  {
+    title: "Managed IT support in Brisbane",
+    href: "/services/managed-it-support-brisbane/",
+  },
+  {
+    title: "IT support on the Gold Coast",
+    href: "/services/it-support-gold-coast/",
+  },
+];
+---
+
+<ArticleLayout
+  title="In-House IT vs Managed IT Services: An Honest Comparison | BigByte Tech"
+  description="Hire an IT person or outsource to an MSP? Real cost comparison, coverage and skills trade-offs, and the hybrid option — for Australian small businesses."
+  heading="In-House IT vs Managed IT Services: Which Is Right for Your Business?"
+  intro="Yes, we're a managed services provider — so this comparison names the cases where hiring in-house genuinely wins, alongside the maths that usually says otherwise."
+  breadcrumb="In-House vs Managed IT"
+  faqs={faqs}
+  related={related}
+>
+  <p>
+    Sooner or later, every growing business has the conversation: "Should we
+    just hire an IT person?" It usually follows a bad week — an outage, a
+    scare, an invoice from an hourly IT contractor. The instinct is sound;
+    someone should own this problem. The question is whether that someone is
+    an employee, a provider, or both.
+  </p>
+
+  <h2>The real cost of an in-house IT hire</h2>
+  <p>
+    The salary is only the visible part. For an Australian small business in
+    2026, a capable IT generalist runs roughly
+    <strong>$75,000–$110,000</strong> in base salary (more in tight markets or
+    for senior skills). On top of that:
+  </p>
+  <ul>
+    <li>
+      <strong>Superannuation</strong> — 12% under the current guarantee.
+    </li>
+    <li>
+      <strong>Leave</strong> — four weeks annual leave plus sick leave and
+      public holidays: roughly six to seven working weeks a year when your IT
+      department doesn't exist.
+    </li>
+    <li>
+      <strong>Tools</strong> — monitoring platforms, security software,
+      remote-management and ticketing systems are licensed per business, and
+      an individual hire needs them just as an MSP does.
+    </li>
+    <li>
+      <strong>Training</strong> — IT skills date quickly; an untrained IT
+      person becomes a liability on exactly the security topics that matter
+      most.
+    </li>
+    <li>
+      <strong>Recruitment and turnover risk</strong> — IT staff are mobile,
+      and when your one IT person resigns, every password, quirk and
+      undocumented fix walks out with their notice period.
+    </li>
+  </ul>
+  <p>
+    All-in, one mid-level IT employee realistically costs
+    <strong>$110,000–$150,000+ a year</strong> — and is still one person,
+    with one set of skills, available during business hours less leave.
+  </p>
+
+  <h2>What managed services cost instead</h2>
+  <p>
+    Fully managed IT for an Australian small business typically runs
+    <strong>$100–$250 per user per month</strong> (the full breakdown is in
+    our <a href="/guides/managed-it-support-cost-australia/">pricing guide</a>).
+    For a 20-person business, that's roughly
+    <strong>$24,000–$60,000 a year</strong> — a third to a half of one
+    employee — for a team covering helpdesk, security, cloud and networking,
+    with 24/7 monitoring and no leave gaps.
+  </p>
+
+  <h2>Coverage: one person vs a team</h2>
+  <p>
+    Cost gets the attention, but coverage is usually the stronger argument:
+  </p>
+  <ul>
+    <li>
+      <strong>Breadth:</strong> no individual is simultaneously strong at
+      helpdesk, networking, security and cloud architecture. A team is.
+    </li>
+    <li>
+      <strong>Hours:</strong> incidents don't respect office hours —
+      ransomware in particular tends to detonate at night and on long
+      weekends, when no one is watching a one-person shop.
+    </li>
+    <li>
+      <strong>Continuity:</strong> the MSP model forces documentation;
+      institutional knowledge can't live in one head, so it survives staff
+      changes — theirs and yours.
+    </li>
+    <li>
+      <strong>Surge capacity:</strong> an office move or a security incident
+      needs five people for a week, not one person for five weeks.
+    </li>
+  </ul>
+
+  <h2>When in-house genuinely makes sense</h2>
+  <p>An honest list, because it exists:</p>
+  <ul>
+    <li>
+      <strong>Bespoke or specialised systems</strong> — if your business
+      runs on custom software needing daily expert attention, you may need
+      that expertise on payroll.
+    </li>
+    <li>
+      <strong>Constant physical presence</strong> — environments like
+      manufacturing floors or labs where hands-on support is needed hourly,
+      not weekly.
+    </li>
+    <li>
+      <strong>Scale</strong> — somewhere beyond 50–100 staff, dedicated
+      internal IT starts paying for itself, usually alongside (not instead
+      of) external specialists.
+    </li>
+    <li>
+      <strong>IT as the product</strong> — if technology is what you sell,
+      core technical capability belongs in-house.
+    </li>
+  </ul>
+
+  <h2>The hybrid model: co-managed IT</h2>
+  <p>
+    For businesses in the awkward middle, co-managed IT pairs an internal IT
+    coordinator — who knows the business, handles day-to-day requests and
+    owns vendor relationships — with an MSP providing the monitoring
+    platform, security stack, after-hours coverage and escalation depth. The
+    internal person stops being a single point of failure; the business keeps
+    its local knowledge. It's also a graceful path in either direction as you
+    grow.
+  </p>
+
+  <h2>A simple decision framework</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Your situation</th>
+        <th>Usually the right answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Under ~50 staff, standard business systems</td>
+        <td>Managed services</td>
+      </tr>
+      <tr>
+        <td>Under ~50 staff, heavy compliance or bespoke systems</td>
+        <td>Managed services with specialist add-ons, or co-managed</td>
+      </tr>
+      <tr>
+        <td>50–100+ staff</td>
+        <td>Co-managed: internal coordinator + MSP platform</td>
+      </tr>
+      <tr>
+        <td>Technology is your product</td>
+        <td>In-house engineering; consider outsourcing internal IT anyway</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p>
+      <strong>Leaning towards outsourcing?</strong> Vet providers properly —
+      our <a href="/guides/how-to-choose-an-it-support-company/"
+        >12 questions to ask an IT support company</a
+      > apply to us as much as anyone. And if you want to talk through the
+      co-managed option, <a href="/#contact">we're happy to give you a
+      straight answer</a> about whether it fits your size.
+    </p>
+  </div>
+</ArticleLayout>

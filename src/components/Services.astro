@@ -6,21 +6,25 @@ const services = [
     icon: Monitor,
     title: "Managed IT Support Services",
     description: "Complete IT management and support for your entire technology infrastructure.",
+    link: { href: "/services/managed-it-support-brisbane/", label: "IT support in Brisbane" },
   },
   {
     icon: PhoneCall,
     title: "Business Phone & VoIP Solutions",
     description: "Setup and management of Internet based phone systems for seamless communication.",
+    link: { href: "/guides/voip-vs-landline-small-business-australia/", label: "VoIP vs landline guide" },
   },
   {
     icon: Cloud,
     title: "Cloud Migration & Backup",
     description: "Seamless cloud transitions with reliable backup and disaster recovery.",
+    link: { href: "/guides/cloud-backup-vs-local-backup/", label: "Backup strategy guide" },
   },
   {
     icon: Settings2,
     title: "Business Efficiency & Automation",
     description: "Implement smart business automations that save time and boost productivity.",
+    link: { href: "/guides/", label: "Browse our IT guides" },
   },
 ];
 ---
@@ -40,12 +44,18 @@ const services = [
       {
         services.map((service) => (
           <div class="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white rounded-2xl group">
-            <div class="p-8 text-center">
+            <div class="p-8 text-center flex flex-col h-full">
               <div class="w-16 h-16 bg-[#2978F2]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2978F2] transition-colors duration-300">
                 <service.icon className="h-8 w-8 text-[#2978F2] group-hover:text-white transition-colors duration-300" />
               </div>
               <h3 class="text-xl font-bold text-[#1F1F1F] mb-4">{service.title}</h3>
-              <p class="text-gray-600 leading-relaxed">{service.description}</p>
+              <p class="text-gray-600 leading-relaxed flex-grow">{service.description}</p>
+              <a
+                href={service.link.href}
+                class="inline-block mt-6 text-[#2978F2] font-semibold hover:text-[#1F5FD4] hover:underline transition-colors"
+              >
+                {service.link.label} →
+              </a>
             </div>
           </div>
         ))

@@ -1,0 +1,158 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import { ArrowRight } from "lucide-react";
+
+const guides = [
+  {
+    title: "How Much Does Managed IT Support Cost in Australia?",
+    description:
+      "Honest per-user pricing ranges, the main pricing models, hidden costs to watch for, and how to compare quotes fairly.",
+    href: "/guides/managed-it-support-cost-australia/",
+    tag: "Pricing",
+  },
+  {
+    title: "How to Choose an IT Support Company",
+    description:
+      "The 12 questions that separate great IT providers from expensive mistakes — covering SLAs, security, pricing and exit terms.",
+    href: "/guides/how-to-choose-an-it-support-company/",
+    tag: "Buying guide",
+  },
+  {
+    title: "In-House IT vs Managed IT Services",
+    description:
+      "Hire an IT person or outsource? The real cost comparison, coverage trade-offs, and when each option genuinely wins.",
+    href: "/guides/in-house-it-vs-managed-it-services/",
+    tag: "Buying guide",
+  },
+  {
+    title: "The Essential Eight, Explained for Small Business",
+    description:
+      "Australia's official cyber security baseline translated into plain English, with a practical order of attack on a small budget.",
+    href: "/guides/essential-eight-explained-small-business/",
+    tag: "Security",
+  },
+  {
+    title: "Small Business Cyber Security Checklist",
+    description:
+      "Fifteen practical actions — most free or cheap — that close the gaps attackers actually use against Australian small businesses.",
+    href: "/guides/small-business-cyber-security-checklist/",
+    tag: "Security",
+  },
+  {
+    title: "Cloud Backup vs Local Backup",
+    description:
+      "How the 3-2-1 rule works, why Microsoft 365 isn't a backup, and building a backup strategy that survives ransomware.",
+    href: "/guides/cloud-backup-vs-local-backup/",
+    tag: "Cloud & backup",
+  },
+  {
+    title: "VoIP vs Landline for Small Business in Australia",
+    description:
+      "Costs, call quality, NBN considerations and the end of ISDN — a practical comparison for Australian small businesses.",
+    href: "/guides/voip-vs-landline-small-business-australia/",
+    tag: "Phones",
+  },
+  {
+    title: "How Much Does a Small Business Website Cost in Australia?",
+    description:
+      "Realistic pricing for DIY builders, freelancers and agencies, what drives quotes up, and the ongoing costs nobody mentions.",
+    href: "/guides/small-business-website-cost-australia/",
+    tag: "Websites",
+  },
+];
+
+const servicePages = [
+  {
+    title: "Managed IT Support Brisbane",
+    href: "/services/managed-it-support-brisbane/",
+  },
+  {
+    title: "IT Support Gold Coast",
+    href: "/services/it-support-gold-coast/",
+  },
+];
+---
+
+<Layout
+  title="IT Guides for Australian Small Businesses | BigByte Tech"
+  description="Plain-English guides on IT support costs, cyber security, the Essential Eight, backups, VoIP and websites — written for Australian small business owners."
+>
+  <div class="min-h-screen bg-white">
+    <Navigation />
+
+    <main>
+      <header
+        class="bg-gradient-to-br from-white via-blue-50/30 to-white pt-32 pb-12"
+      >
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-[#1F1F1F] mb-6">
+            IT Guides for Small Business
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            Plain-English answers to the IT questions Australian small business
+            owners actually ask — costs, security, backups and phones. No
+            jargon, no fluff.
+          </p>
+        </div>
+      </header>
+
+      <section class="py-12">
+        <div class="container mx-auto px-6 max-w-5xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {
+              guides.map((guide) => (
+                <a
+                  href={guide.href}
+                  class="block bg-white border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] rounded-2xl p-8 group"
+                >
+                  <p class="text-[#2978F2] font-semibold uppercase tracking-wider text-sm mb-3">
+                    {guide.tag}
+                  </p>
+                  <h2 class="text-2xl font-bold text-[#1F1F1F] mb-3 group-hover:text-[#2978F2] transition-colors">
+                    {guide.title}
+                  </h2>
+                  <p class="text-gray-600 leading-relaxed mb-4">
+                    {guide.description}
+                  </p>
+                  <span class="inline-flex items-center text-[#2978F2] font-semibold">
+                    Read the guide
+                    <ArrowRight
+                      className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="mt-16 bg-gray-50 rounded-2xl p-8 md:p-10">
+            <h2 class="text-2xl font-bold text-[#1F1F1F] mb-4">
+              Looking for IT support instead?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              We provide fixed-fee managed IT support across South East
+              Queensland:
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              {
+                servicePages.map((page) => (
+                  <a
+                    href={page.href}
+                    class="inline-flex items-center justify-center bg-[#2978F2] hover:bg-[#1F5FD4] text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    {page.title}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>

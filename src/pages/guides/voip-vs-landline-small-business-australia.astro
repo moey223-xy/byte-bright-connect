@@ -1,0 +1,232 @@
+---
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const faqs = [
+  {
+    question: "Can I keep my existing phone number if I switch to VoIP?",
+    answer:
+      "Yes. Number porting is a standard, regulated process in Australia — your existing local or 1300/1800 number moves to the new VoIP provider. Porting typically takes from a few days to a few weeks; the key rule is to never cancel your old service until the port has completed, or you can lose the number.",
+  },
+  {
+    question: "How much internet speed does VoIP actually need?",
+    answer:
+      "Surprisingly little — roughly 100 kbps per concurrent call. Ten simultaneous calls need about 1 Mbps, which any business NBN plan handles easily. Call quality problems are almost never about raw speed; they're about congestion and jitter, which is why a router with quality-of-service (QoS) settings matters more than a faster plan.",
+  },
+  {
+    question: "What happens to VoIP phones during a power or internet outage?",
+    answer:
+      "Desk phones go down with the power or the connection — but modern VoIP fails over gracefully: calls can automatically redirect to mobiles, another site, or voicemail-to-email. With a 4G/5G backup link on your router, most outages become invisible to callers. A landline-era system in a blackout just rings out.",
+  },
+  {
+    question: "Is VoIP call quality really as good as a landline?",
+    answer:
+      "On a properly configured connection, yes — typically better, since VoIP supports HD voice codecs that traditional copper lines never could. The qualifier matters: VoIP on congested, unmanaged internet can sound bad. Set up correctly, your callers won't be able to tell, except that it sounds clearer.",
+  },
+];
+
+const related = [
+  {
+    title: "How much does managed IT support cost in Australia?",
+    href: "/guides/managed-it-support-cost-australia/",
+  },
+  {
+    title: "Managed IT support in Brisbane",
+    href: "/services/managed-it-support-brisbane/",
+  },
+  {
+    title: "IT support on the Gold Coast",
+    href: "/services/it-support-gold-coast/",
+  },
+  {
+    title: "Small business cyber security checklist",
+    href: "/guides/small-business-cyber-security-checklist/",
+  },
+];
+---
+
+<ArticleLayout
+  title="VoIP vs Landline for Small Business in Australia | BigByte Tech"
+  description="Is VoIP right for your business? Costs, call quality, NBN considerations and the end of ISDN — a practical comparison for Australian small businesses."
+  heading="VoIP vs Landline: What Australian Small Businesses Need to Know"
+  intro="The copper landline era is effectively over in Australia. Here's what that means for your business phones, what VoIP really costs, and the few cases where old-style lines still make sense."
+  breadcrumb="VoIP vs Landline"
+  faqs={faqs}
+  related={related}
+>
+  <h2>The short answer</h2>
+  <p>
+    For almost every Australian small business in 2026,
+    <strong>VoIP (Voice over IP) is the right choice</strong> — it's cheaper,
+    dramatically more flexible, and the traditional alternative is largely
+    being switched off underneath you anyway. The honest caveats: VoIP is only
+    as good as the internet connection it runs on, and a sloppy setup gives
+    VoIP its undeserved reputation for choppy calls. Get the connection and
+    configuration right and there is no contest.
+  </p>
+
+  <h2>What changed: the NBN and the end of ISDN</h2>
+  <p>
+    Two structural shifts ended the landline era in Australia. First, the
+    <strong>NBN rollout</strong> progressively disconnected the old copper
+    network — in NBN fixed-line areas, traditional phone services were
+    migrated or switched off, so many "landlines" today are already
+    internet-based whether their owners know it or not. Second, Telstra
+    retired the <strong>ISDN</strong> network that powered traditional
+    multi-line business phone systems — new sales ended in 2018 and the
+    network was wound down in the years after. The business phone systems of
+    the 1990s and 2000s aren't being deprecated; they're already gone.
+  </p>
+  <p>
+    The practical question for a small business is therefore not really "VoIP
+    or landline" — it's "which VoIP setup, and is our internet ready for it".
+  </p>
+
+  <h2>Cost comparison</h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Traditional lines (legacy)</th>
+        <th>Business VoIP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Typical monthly cost</strong></td>
+        <td>$40–$60+ per line, plus call charges</td>
+        <td>Roughly $25–$45 per user, calls typically included</td>
+      </tr>
+      <tr>
+        <td><strong>Hardware</strong></td>
+        <td>On-premises PBX hardware: thousands up front, plus maintenance</td>
+        <td>
+          Cloud-hosted PBX: no phone-system hardware required; handsets
+          optional (apps can replace them)
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Adding a line/user</strong></td>
+        <td>Technician visit, possible new cabling, weeks</td>
+        <td>A few clicks, minutes</td>
+      </tr>
+      <tr>
+        <td><strong>National &amp; mobile calls</strong></td>
+        <td>Metered or bundled at extra cost</td>
+        <td>Usually included in the per-user fee</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    These are typical Australian market ranges as at 2026 — plans vary, so
+    treat them as a sanity check for quotes rather than a price list. For a
+    five-person office, the total swing is commonly thousands of dollars a
+    year, before counting the avoided PBX maintenance.
+  </p>
+
+  <h2>Call quality, reliability and what VoIP actually needs</h2>
+  <p>
+    VoIP carries calls over your internet connection, so the connection is
+    the system. The requirements are modest — around 100 kbps per concurrent
+    call — but the connection needs to be <em>stable</em>, not just fast.
+    Three things separate crystal-clear VoIP from the choppy horror stories:
+  </p>
+  <ul>
+    <li>
+      <strong>A business-grade NBN plan</strong> appropriate to your team
+      size;
+    </li>
+    <li>
+      <strong>A router with QoS</strong> (quality of service) configured to
+      prioritise voice traffic over someone's lunchtime video streaming;
+    </li>
+    <li>
+      <strong>A failover path</strong> — typically a 4G/5G backup or
+      automatic redirect to mobiles — for the day the internet does go down.
+    </li>
+  </ul>
+
+  <h2>Features landlines never had</h2>
+  <p>
+    Cost gets businesses interested in VoIP; features are why nobody goes
+    back:
+  </p>
+  <ul>
+    <li>
+      <strong>Your number follows you</strong> — answer the office line on
+      your mobile, laptop or home office with the business number showing.
+    </li>
+    <li>
+      <strong>Voicemail-to-email</strong> — missed-call recordings land in
+      your inbox as audio files.
+    </li>
+    <li>
+      <strong>Call routing and auto-attendant</strong> — "press 1 for
+      sales" menus, business-hours rules, and queues that used to require
+      enterprise hardware.
+    </li>
+    <li>
+      <strong>Instant scale</strong> — seasonal staff on the Gold Coast in
+      December? Add ten users for the summer, remove them in February.
+    </li>
+    <li>
+      <strong>Integration</strong> — click-to-dial from your CRM, call logs
+      against customer records, Teams integration.
+    </li>
+  </ul>
+
+  <h2>When a traditional-style line still makes sense</h2>
+  <p>Honesty requires the short list of exceptions:</p>
+  <ul>
+    <li>
+      <strong>Lift phones, fire alarms and some medical/security alarms</strong>
+      often have specific carriage requirements — these need purpose-built
+      solutions, not a standard VoIP line.
+    </li>
+    <li>
+      <strong>Locations with genuinely poor connectivity</strong> — where
+      neither fixed-line NBN nor solid 4G/5G is available, voice over those
+      networks inherits the problem.
+    </li>
+    <li>
+      <strong>EFTPOS and fax devices</strong> on legacy dial-up connections
+      need upgrading or special handling before the line they use disappears.
+    </li>
+  </ul>
+
+  <h2>How to switch without losing your number</h2>
+  <ol>
+    <li>
+      <strong>Audit what you have</strong> — every number, line and device
+      (don't forget the fax, alarm and EFTPOS lines nobody thinks about).
+    </li>
+    <li>
+      <strong>Check your internet</strong> — plan, router and failover, per
+      the section above.
+    </li>
+    <li>
+      <strong>Choose the system and port your numbers</strong> — porting is
+      standard and regulated; your number moves with you.
+    </li>
+    <li>
+      <strong>Run in parallel briefly</strong> — keep the old service alive
+      until the port completes and you've tested inbound, outbound and
+      after-hours routing.
+    </li>
+    <li>
+      <strong>Then cancel the old service</strong> — never the other way
+      around.
+    </li>
+  </ol>
+
+  <div class="callout">
+    <p>
+      <strong>This is one of our core services.</strong> BigByte Tech designs
+      and manages VoIP phone systems for small businesses across
+      <a href="/services/managed-it-support-brisbane/">Brisbane</a> and
+      <a href="/services/it-support-gold-coast/">the Gold Coast</a> — including
+      the internet, router and failover side that makes call quality
+      bulletproof. <a href="/#contact">Ask us for a phone system health
+      check</a>.
+    </p>
+  </div>
+</ArticleLayout>
